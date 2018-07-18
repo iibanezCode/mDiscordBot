@@ -5,6 +5,23 @@ import java.util.*;
 
 public class CommandHandler {
 
+    // A static map of commands mapping from command string to the functional impl
+    private static Map<String, Command> commandMap = new HashMap<>();
+
+    // Statically populate the commandMap with the intended functionality
+    // Might be better practise to do this from an instantiated objects constructor
+    static {
+
+        commandMap.put("testcommand", (event, args) -> {
+            BotUtils.sendMessage(event.getChannel(), "You typed: " + args);
+        });
+
+        commandMap.put("ping", (event, args) -> {
+            BotUtils.sendMessage(event.getChannel(), "puta madre");
+        });
+
+    }
+
     @EventSubscriber
     public void onMessageReceived(MessageReceivedEvent event){
 
@@ -31,21 +48,10 @@ public class CommandHandler {
         List<String> argsList = new ArrayList<>(Arrays.asList(argArray));
         argsList.remove(0); // Remove the command
 
-        // Begin the switch to handle the string to command mappings. It's likely wise to pass the whole event or
-        // some part (IChannel) to the command handling it
-        switch (commandStr) {
+        // Instead of delegating the work to a switch, automatically do it via calling the mapping if it exists
 
-            case "test":
-                testCommand(event, argsList);
-                break;
-
-        }
-    }
-
-
-    private void testCommand(MessageReceivedEvent event, List<String> args){
-
-        BotUtils.sendMessage(event.getChannel(), "You ran the test command with args: " + args);
+        if(commandMap.containsKey(commandStr))
+            commandMap.get(commandStr).runCommand(event, argsList);
 
     }
 
