@@ -9,21 +9,9 @@ public class MainRunner {
             return;
         }*/
 
-        IDiscordClient cli = BotUtils.getBuiltDiscordClient("NDY4ODI2NDgwMDc2MzkwNDIx.Di-38g.7kmpOZT1E7eTzyDsJHbHTOsJMPM");
+        IDiscordClient cli = BotUtils.getBuiltDiscordClient("NDc3MDY4MTA1NDgzMjg4NTc3.Dk2weg.gTzcVQUKZB_7kDJVa9GUbOQL_gg");
 
-        /*
-        // Commented out as you don't really want duplicate listeners unless you're intentionally writing your code
-        // like that.
-        // Register a listener via the IListener interface
-        cli.getDispatcher().registerListener(new IListener<MessageReceivedEvent>() {
-            public void handle(MessageReceivedEvent event) {
-                if(event.getMessage().getContent().startsWith(BotUtils.BOT_PREFIX + "test"))
-                    BotUtils.sendMessage(event.getChannel(), "I am sending a message from an IListener listener");
-            }
-        });
-        */
-
-        cli.getDispatcher().registerListener(new MyEvents());
+        cli.getDispatcher().registerListener(new CommandHandler());
 
 
         cli.login();

@@ -1,1 +1,0 @@
-java -jar MainRunner.jar NDY4ODI2NDgwMDc2MzkwNDIx.Di-38g.7kmpOZT1E7eTzyDsJHbHTOsJMPM
