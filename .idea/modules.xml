@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/WorldBossDiscordBot.iml" filepath="$PROJECT_DIR$/.idea/WorldBossDiscordBot.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.chrono.dcbot.iml" filepath="$PROJECT_DIR$/.idea/modules/com.chrono.dcbot.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.chrono.dcbot_main.iml" filepath="$PROJECT_DIR$/.idea/modules/com.chrono.dcbot_main.iml" group="com.chrono.dcbot" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.chrono.dcbot_test.iml" filepath="$PROJECT_DIR$/.idea/modules/com.chrono.dcbot_test.iml" group="com.chrono.dcbot" />
+      <module fileurl="file://$PROJECT_DIR$/mDiscordBot.iml" filepath="$PROJECT_DIR$/mDiscordBot.iml" />
     </modules>
   </component>
 </project>
